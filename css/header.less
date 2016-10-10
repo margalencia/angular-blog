@@ -1,0 +1,64 @@
+.site-header {
+
+    &__logo {
+        margin: 1.6em auto;
+    }
+
+    &__navigation-wrapper {
+        position: relative;
+        border-bottom: 4px solid;
+        border-color: #c6defa;
+        background-color: @navigation-bg-color;
+
+        &:after {
+            position: absolute;
+            top: 100%;
+            left: 50%;
+            display: block;
+            margin-top: -9px;
+            margin-left: -9px;
+            width: 10px;
+            height: 10px;
+            border: 4px solid;
+            border-color: transparent #c6defa #c6defa transparent;
+            background: linear-gradient(135deg, transparent 50%, @navigation-bg-color 0) no-repeat;
+            content: '';
+            transform: scaleX(1.5) rotate(45deg);
+        }
+    }
+
+    &__navigation {
+        margin: 0 auto;
+    }
+}
+
+.logo {
+    width: 366px;
+    height: 56px;
+    background: url(../img/logo.png) no-repeat 0 0;
+}
+
+.main-menu {
+    width: 60em;
+    display: flex;
+    justify-content: center;
+
+    &__item {
+        flex: 1;
+        text-align: center;
+    }
+
+    &__link {
+        font-size: 1.8em;
+        line-height: 3em;
+        text-transform: uppercase;
+        text-decoration: none;
+        color: #fff;
+
+        &:hover,
+        &:focus {
+            text-decoration: underline;
+            outline: none;
+        }
+    }
+}

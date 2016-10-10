@@ -1,0 +1,221 @@
+.page-wrapper {
+    width: @page-width;
+    margin: 0 auto;
+    padding: 5em 0;
+}
+
+.content {
+    float: left;
+    width: @page-width - @sidebar-width;
+}
+
+
+
+.blog-post {
+    margin-bottom: @content-vertical-margin;
+
+    &__picture {
+        width: 640px;
+    }
+
+    &__title-link {
+        font-size: 2em;
+        color: inherit;
+        text-decoration: none;
+
+        &:hover,
+        &:focus {
+            text-decoration: underline;
+            outline: none;
+        }
+    }
+
+    &__footer {
+        border: solid #e2e5e8;
+        border-width: 1px 0;
+        padding: 0.8em 0;
+        overflow: hidden;
+    }
+
+    &__title,
+    &__picture,
+    &__footer {
+        margin-bottom: 1rem;
+    }
+
+    &__date,
+    &__author {
+        font-size: 1.2em;
+        line-height: 2em;
+        display: inline-block;
+        margin: 0 0.5em;
+        vertical-align: middle;
+        background: no-repeat left 50%;
+        padding-left: 1.5em;
+    }
+
+    &__date {
+        background-image: url(../img/clock.png);
+    }
+
+    &__author {
+        background-image: url(../img/foot.png);
+    }
+
+    &__author-link {
+        color: inherit;
+        text-decoration: none;
+
+        &:hover,
+        &:focus {
+            outline: none;
+
+            .blog-post__author-name {
+                text-decoration: underline;
+            }
+        }
+    }
+
+    &__share-buttons {
+        float: right;
+    }
+
+    &__text {
+        text-align: justify;
+        font-size: 1.2em;
+    }
+}
+
+.share-buttons {
+    display: flex;
+
+    &__item {
+        margin-left: 0.6em; // 6px
+
+        &:first-child {
+            margin-left: 0;
+        }
+    }
+
+    &__link {
+        display: block;
+        font-size: 1.6em; // 16px
+        line-height: 1.5em; // 24px
+        border-radius: 0.125em; // 2px
+        box-sizing: border-box;
+        min-width: 3.125em; // 50px
+        padding-right: 0.375em; // 6px
+        padding-left: 1.5625em; // 25px
+        text-align: right;
+        text-decoration: none;
+        color: #fff;
+        background: #d1dae3 no-repeat;
+
+        &:after {
+            content: attr(data-shared);
+        }
+
+        &--facebook {
+            background-image: url(../img/facebook.png);
+            background-position: 10px 50%;
+
+            &:hover,
+            &:focus {
+                outline: none;
+                background-color: #3c5a98;
+            }
+        }
+
+        &--google {
+            background-image: url(../img/google.png);
+            background-position: 0 50%;
+
+            &:hover,
+            &:focus {
+                outline: none;
+                background-color: #c25234;
+            }
+        }
+
+        &--twitter {
+            background-image: url(../img/twitter.png);
+            background-position: 3px 50%;
+
+            &:hover,
+            &:focus {
+                outline: none;
+                background-color: #00aced;
+            }
+        }
+
+        &--vk {
+            background-image: url(../img/vk.png);
+            background-position: 7px 50%;
+
+            &:hover,
+            &:focus {
+                outline: none;
+                background-color: #48729e;
+            }
+        }
+
+        &--yandex {
+            background-image: url(../img/yandex.png);
+            background-position: 7px 50%;
+
+            &:hover,
+            &:focus {
+                outline: none;
+                background-color: #d83933;
+            }
+        }
+    }
+}
+
+.blog-button {
+    font-size: 1.2em;
+    color: #fff;
+    background: @complementary-font-color;
+    border: 0;
+    padding: 1em 2em;
+    text-transform: uppercase;
+
+    &:hover,
+    &:focus {
+        outline: none;
+        background: #1c5b8b;
+    }
+
+    &:active {
+        position: relative;
+        top: 1px;
+    }
+}
+
+.post-form {
+    font-size: 1.4em;
+    margin: 1em 0;
+    width: 100%;
+
+    &__item {
+        margin: .6em 0;
+    }
+
+    &__label {
+        display: inline-block;
+        margin: .3em 0;
+    }
+
+    &__control {
+        font: inherit;
+        box-sizing: border-box;
+        width: 100%;
+        padding: .5em;
+        border: 1px solid @main-font-color;
+
+        &--file {
+            padding: 0;
+            border: 0;
+        }
+    }
+}

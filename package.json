@@ -1,0 +1,26 @@
+{
+  "name": "blog_layout",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.html",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "lessc ./css/style.less ./css/style.css"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@git.epam.com:margarita_kurdyumova/blog_layout.git"
+  },
+  "keywords": [
+    "bem",
+    "html",
+    "less",
+    "blog",
+    "layout"
+  ],
+  "author": "margarita_kurdyumova",
+  "license": "ISC",
+  "dependencies": {
+    "less": "2.5.3"
+  }
+}
