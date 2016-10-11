@@ -5,7 +5,8 @@
   "main": "index.html",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "lessc ./css/style.less ./css/style.css"
+    "build": "lessc ./css/style.less ./css/style.css",
+    "run-server": "json-server db.json --static ./"
   },
   "repository": {
     "type": "git",
@@ -21,6 +22,7 @@
   "author": "margarita_kurdyumova",
   "license": "ISC",
   "dependencies": {
+    "angular": "^1.5.8",
     "less": "2.5.3"
   }
 }

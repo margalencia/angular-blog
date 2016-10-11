@@ -1,0 +1,36 @@
+<article class="blog-post" ng-repeat="post in postListController.posts">
+    <header>
+        <img class="blog-post__picture" src="img/post_2_picture.jpg" alt="Blog post 1 picture">
+        <h2 class="blog-post__title">
+            <a href="#" class="blog-post__title-link">
+                {{post.title}}
+            </a>
+        </h2>
+    </header>
+    <footer class="blog-post__footer">
+        <time class="blog-post__date" datetime="2014-01-01 22:58">22:58 Jan 01, 2014</time>
+        <address class="blog-post__author">
+            <a href="#" class="blog-post__author-link">by <span class="blog-post__author-name">E. Hyperraccoon</span></a>
+        </address>
+        <ul class="blog-post__share-buttons share-buttons">
+            <li class="share-buttons__item">
+                <a href="#" class="share-buttons__link share-buttons__link--facebook" title="Share with Facebook" data-shared="16"><span class="sr-only">Share with Facebook</span></a>
+            </li>
+            <li class="share-buttons__item">
+                <a href="#" class="share-buttons__link share-buttons__link--google" title="Share with Google+" data-shared="7"><span class="sr-only">Share with Google+</span></a>
+            </li>
+            <li class="share-buttons__item">
+                <a href="#" class="share-buttons__link share-buttons__link--twitter" title="Share with Twitter" data-shared="15"><span class="sr-only">Share with Twitter</span></a>
+            </li>
+            <li class="share-buttons__item">
+                <a href="#" class="share-buttons__link share-buttons__link--vk" title="Share with VK" data-shared="16"><span class="sr-only">Share with VK</span></a>
+            </li>
+            <li class="share-buttons__item">
+                <a href="#" class="share-buttons__link share-buttons__link--yandex" title="Share with Yandex" data-shared="1"><span class="sr-only">Share with Yandex</span></a>
+            </li>
+        </ul>
+    </footer>
+    <div class="blog-post__text">
+        {{post.text}}
+    </div>
+</article>

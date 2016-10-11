@@ -1,0 +1,13 @@
+{
+  "posts": [
+    {
+      "id": 0,
+      "title": "Developer Guide / Components",
+      "text": "Directives can require the controllers of other directives to enable communication between each other. This can be achieved in a component by providing an object mapping for the require property. The object keys specify the property names under which the required controllers (object values) will be bound to the requiring component's controller."
+    }, {
+      "id": 0,
+      "title": "Unit-testing Component Controllers",
+      "text": "The easiest way to unit-test a component controller is by using the $componentController that is included in ngMock. The advantage of this method is that you do not have to create any DOM elements. The following example shows how to do this for the heroDetail component from above. The examples use the Jasmine testing framework."
+    }
+  ]
+}
