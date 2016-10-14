@@ -1,9 +1,10 @@
 class PostsController {
     constructor(PostsService) {
+        this.posts = [];
         this.postsService = PostsService;
     }
     $onInit() {
-        this.postsService.getPosts().then(response => this.posts = response);
+        this.posts = this.postsService.getPosts();
     }
 }
 

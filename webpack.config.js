@@ -1,38 +1,54 @@
+'use strict';
+
 var path = require('path');
+var webpack = require('webpack');
+var HtmlWebpackPlugin = require('html-webpack-plugin');
 
-module.exports = {
-    cache: true,
-    entry: {
-        main: './app/app.module.js',
+module.exports = (function makeWebpackConfig () {
+    var config = {};
 
-        vendor: [
-            'angular',
-            'angular-resource'
+    config.entry = {
+        app: './src/app/app.module.js'
+    };
+
+    config.output = {
+        path: path.resolve(__dirname, './dist'),
+        filename: 'bundle.js'
+    };
+
+    config.devtool = 'source-map';
+
+
+    config.resolve = {
+        modulesDirectories: [
+            'node_modules',
         ]
-    },
-    output: {
-        path: path.resolve(__dirname, './dist/scripts'),
-        filename: '[name].js',
-        chunkFilename: '[chunkhash].js'
-    },
-    module: {
+    };
+
+    config.module = {
+        preLoaders: [],
         loaders: [{
             test: /\.js$/,
-            exclude: /node_modules/,
-            loader: 'babel',
-            query: {
-                presets: ['es2015']
-            }
+            loaders: ['ng-annotate', 'babel'],
+            exclude: /node_modules/
+        }, {
+            test: /\.less$/,
+            loaders: "style!css!less"
+        }, {
+            test: /\.(png|jpg|jpeg|gif|svg|woff|woff2|ttf|eot)$/,
+            loader: 'file'
         }, {
             test: /\.html$/,
-            exclude: /node_modules/,
             loader: 'raw'
         }]
-    },
-    plugins: [
-        // ....
-    ],
-    resolve: {
-        extensions: ['', '.js']
-    }
-};
+    };
+
+    config.plugins = [
+        new HtmlWebpackPlugin({
+            template: 'src/index.html'
+        })
+    ];
+
+    return config;
+}());
+
