@@ -3,6 +3,7 @@
 var path = require('path');
 var webpack = require('webpack');
 var HtmlWebpackPlugin = require('html-webpack-plugin');
+var ExtractTextPlugin = require("extract-text-webpack-plugin");
 
 module.exports = (function makeWebpackConfig () {
     var config = {};
@@ -33,7 +34,7 @@ module.exports = (function makeWebpackConfig () {
             exclude: /node_modules/
         }, {
             test: /\.less$/,
-            loaders: "style!css!less"
+            loaders: ExtractTextPlugin.extract('style', 'css!less?resolve url')
         }, {
             test: /\.(png|jpg|jpeg|gif|svg|woff|woff2|ttf|eot)$/,
             loader: 'file'
@@ -46,7 +47,8 @@ module.exports = (function makeWebpackConfig () {
     config.plugins = [
         new HtmlWebpackPlugin({
             template: 'src/index.html'
-        })
+        }),
+        new ExtractTextPlugin("styles.css")
     ];
 
     return config;
