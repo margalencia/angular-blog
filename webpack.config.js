@@ -34,7 +34,7 @@ module.exports = (function makeWebpackConfig () {
             exclude: /node_modules/
         }, {
             test: /\.less$/,
-            loaders: ExtractTextPlugin.extract('style', 'css!less?resolve url')
+            loader: ExtractTextPlugin.extract('style-loader', 'css-loader!less-loader')
         }, {
             test: /\.(png|jpg|jpeg|gif|svg|woff|woff2|ttf|eot)$/,
             loader: 'file'
@@ -48,7 +48,7 @@ module.exports = (function makeWebpackConfig () {
         new HtmlWebpackPlugin({
             template: 'src/index.html'
         }),
-        new ExtractTextPlugin("styles.css")
+        new ExtractTextPlugin('style.css', {allChunks: true})
     ];
 
     return config;
