@@ -1,5 +1,6 @@
 class PostsService {
     constructor($resource) {
+        'ngInject';
         this.posts = $resource('/posts/:id', {}, {
             update: {method: 'PUT'}
         });
@@ -8,8 +9,6 @@ class PostsService {
         return this.posts.query();
     }
 }
-
-PostsService.$inject = ['$resource'];
 
 export default PostsService;
 

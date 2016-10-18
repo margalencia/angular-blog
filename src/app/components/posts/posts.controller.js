@@ -1,13 +1,11 @@
 class PostsController {
     constructor(PostsService) {
-        this.posts = [];
+        'ngInject';
         this.postsService = PostsService;
     }
     $onInit() {
         this.posts = this.postsService.getPosts();
     }
 }
-
-PostsController.$inject = ['PostsService'];
 
 export default PostsController;

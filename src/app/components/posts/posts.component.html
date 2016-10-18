@@ -1,16 +1,18 @@
 <article class="blog-post" ng-repeat="post in $ctrl.posts">
     <header>
-        <img class="blog-post__picture" src="require(/src/img/post_2_picture.jpg)" alt="Blog post 1 picture">
+        <figure class="blog-post__picture-wrap">
+            <img class="blog-post__picture" src="{{post.img}}" alt="Blog post 1 picture">
+        </figure>
         <h2 class="blog-post__title">
-            <a href="#" class="blog-post__title-link">
+            <a href="posts/{{post.id}}" class="blog-post__title-link">
                 {{post.title}}
             </a>
         </h2>
     </header>
     <footer class="blog-post__footer">
-        <time class="blog-post__date" datetime="2014-01-01 22:58">22:58 Jan 01, 2014</time>
+        <time class="blog-post__date" datetime="{{post.date | date:'yyyy-mm-dd hh:mm'}}">{{post.date | date:'d MMMM yyyy, h:m' }}</time>
         <address class="blog-post__author">
-            <a href="#" class="blog-post__author-link">by <span class="blog-post__author-name">E. Hyperraccoon</span></a>
+            <a href="#" class="blog-post__author-link">by <span class="blog-post__author-name">{{post.author}}</span></a>
         </address>
         <ul class="blog-post__share-buttons share-buttons">
             <li class="share-buttons__item">
