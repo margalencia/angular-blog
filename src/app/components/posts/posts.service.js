@@ -5,8 +5,13 @@ class PostsService {
             update: {method: 'PUT'}
         });
     }
+
     getPosts() {
         return this.posts.query();
+    }
+
+    getPostData(postId) {
+        return this.posts.get({id: postId});
     }
 }
 

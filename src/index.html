@@ -20,38 +20,7 @@
     </nav>
 </header>
 <div class="page-wrapper">
-    <div class="blog-post">
-        <button type="button" class="blog-button">Add new</button>
-        <form action="/" class="post-form">
-            <div class="post-form__item">
-                <label for="title" class="post-form__label">Title</label>
-                <input type="text" id="title" class="post-form__control" autofocus>
-            </div>
-            <div class="post-form__item">
-                <label for="author" class="post-form__label">Author</label>
-                <input type="text" id="author" class="post-form__control">
-            </div>
-            <div class="post-form__item">
-                <label for="content" class="post-form__label">Content</label>
-                <textarea id="content" cols="30" rows="10" class="post-form__control"></textarea>
-            </div>
-            <div class="post-form__item">
-                <label for="image" class="post-form__label">Image</label>
-                <input type="file" id="image" class="post-form__control post-form__control--file">
-            </div>
-            <div class="post-form__item">
-                <label for="tags" class="post-form__label">Tags</label>
-                <input type="text" id="tags" class="post-form__control">
-            </div>
-            <div class="post-form__item">
-                <label for="category" class="post-form__label">Category</label>
-                <select id="category" class="post-form__control"></select>
-            </div>
-        </form>
-    </div>
-    <main class="content" ui-view>
-        <posts></posts>
-    </main>
+    <main class="content" ui-view></main>
     <aside class="sidebar">
         <article class="sidebar__item info">
             <h3 class="info__header">About</h3>
